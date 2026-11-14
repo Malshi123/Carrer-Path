@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, redirect, session
-
+import os
 import mysql.connector
+from flask import Flask, render_template, request, redirect, session
 from werkzeug.security import generate_password_hash, check_password_hash
+
+app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "dev-only-change-me")
 
 def get_db():
     # Opens a new connection to the MySQL database
