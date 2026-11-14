@@ -15,14 +15,8 @@ def get_db():
         database="career_platform",
     )
 
-app = Flask(__name__)
-app.secret_key = "any-secret-text"
-
 # Temporary user list (will be replaced by MySQL later)
-users = {
-    "nethsarani": {"password": generate_password_hash("1234"), "role": "Student"},
-    "mentor1": {"password": "1234", "role": "Mentor"},
-}
+users = {}
 
 # Skills required for each career
 careers = {
